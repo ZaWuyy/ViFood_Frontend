@@ -1,0 +1,88 @@
+.login-popup {
+    position: fixed;  /* Cố định vị trí popup */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Overlay */
+  z-index: 1000;
+}
+
+.login-popup-container {
+    width: max(23vw, 330px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    animation: fadeIn 0.5s; /* Hiệu ứng hiện lên */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho form */
+}
+
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.login-popup-title img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.login-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-popup-inputs input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
+    transition: border 0.3s; /* Hiệu ứng chuyển đổi cho viền */
+}
+
+.login-popup-inputs input:focus {
+    border: 1px solid #369630; /* Đổi màu viền khi input được focus */
+}
+
+.login-popup-container button {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #369630;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi cho nền */
+}
+
+.login-popup-container button:hover {
+    background-color: #d75a28; /* Đổi màu khi hover */
+}
+
+.login-popup-condition {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-top: -15px; /* Bạn có thể điều chỉnh lại giá trị này nếu cần */
+}
+
+.login-popup-condition input {
+    margin-top: 5px;
+}
+
+.login-popup p span {
+    color: tomato;
+    font-weight: 500;
+    cursor: pointer;
+}

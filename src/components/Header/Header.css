@@ -1,0 +1,120 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    transition: background-image 1s ease-in-out;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 17%;
+    left: 6vw;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.header-contents p {
+    padding-left: 6px;
+    color: #5f8c39;
+    font-size: 1.2vw;
+}
+
+.header-contents button {
+    color: #5f8c39;
+    border-color: #5f8c39;
+    border-width: 0.5px;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.header-contents button:hover {
+    background-color: #5f8c39;
+    color: #ffffff;
+}
+
+/* Style cho nút Previous và Next */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(184, 184, 184, 0.356);
+    color: white;
+    border: none;
+    padding: 1vw;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+
+.next-button {
+    right: -0.01vw;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(99, 99, 99, 0.8);
+}
+
+.dots {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: transparent; 
+    border: 2px solid lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    border-color: rgba(128, 128, 128, 0.5); 
+    background-color: rgba(94, 91, 91, 0.3); 
+    width: 20px; 
+    height: 10px; 
+    border-radius: 10px; 
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 50vw;
+    }
+
+    .header-contents {
+        max-width: 65%;
+        left: 3vw;
+        align-items: center;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}

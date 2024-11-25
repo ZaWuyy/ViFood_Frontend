@@ -1,0 +1,274 @@
+/* Navbar-top */
+.navbar-top {
+    padding: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-top .logo {
+    width: 130px;
+}
+.navbar-top button{
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid #369630;
+    padding: 0.7vw 2vw;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:0.3s;
+}
+/*Navbar-bottom*/
+
+/*For all*/
+
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar-top button{
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid #369630;
+    padding: 0.7vw 2vw;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:0.3s;
+}
+
+.navbar-top button:hover{
+    background-color:#369630;
+    color: white;
+}
+
+
+.navbar-top .active,
+.navbar-bottom .active
+{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+.navbar-phone-text{
+    margin-left: -15px;
+}
+.nav-right-icon{
+    margin-right: -20px;
+}
+.phone-number{
+    color: #369630;
+    font-size: 18px;
+    font-weight: bold;
+}
+.phone-number:hover{
+    opacity: 0.7
+}
+.navbar-cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-top li{
+    cursor: pointer;
+}
+
+.navbar-cart-icon{
+    position: relative;
+}
+.navbar-fav-icon{
+    position: relative;
+}
+
+.navbar-cart-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
+
+@media (max-width:1050px){
+    .navbar-top .logo{
+        width: 140px;
+    }
+    .navbar-menu{
+        gap: 20px;
+        font-size: 17px;
+    }
+    .navbar-left,
+    .navbar-right{
+        gap:30px;
+    }
+    .navbar-right img{
+        width: 22px;
+    }
+    .navbar-right button{
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width:900px){
+    .navbar-top .logo{
+        width: 120px;
+    }
+    .navbar-menu{
+        gap: 15px;
+        font-size: 16px;
+    }
+    .navbar-left,
+    .navbar-right{
+        gap:20px;
+    }
+    .navbar-right img{
+        width: 20px;
+    }
+    .navbar-right button{
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+.navbar-profile{
+    position: relative;
+}
+.nav-profile-dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+.navbar-profile:hover .nav-profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid #369630;
+    outline: 2px solid white;
+    list-style: none;
+}
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.nav-profile-dropdown li:hover{
+    background-color: #f8f9fab9;
+    color: rgb(4, 211, 142);
+}
+.nav-profile-dropdown img{
+    width: 20px;
+}
+.navbar-bottom{
+    padding: 10px 0px;
+    padding-left: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+.search-suggestions {
+    position: absolute;
+    top: 100%; /* Đặt suggestion box ngay dưới input tìm kiếm */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Giới hạn chiều cao */
+    overflow-y: auto; /* Thêm cuộn khi có nhiều gợi ý */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Đảm bảo suggestion box nổi bật trên các thành phần khác */
+    padding: 5px 0;
+    margin-top: 2px; /* Khoảng cách 2px dưới ô search */
+    display: none; /* Ẩn mặc định */
+}
+.search-suggestions.active {
+    display: block;
+}
+.search-suggestions li {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #49557e;
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+}
+.search-suggestions li:hover {
+    background-color: #f8f9fab9;
+    color: #369630;
+}   
+.search-container {
+    position: relative;        
+    border: 1px solid #ccc;   
+    border-radius: 10px;     
+    padding: 5px 10px;     
+    margin-left: 50px;
+    width: 400px;              
+    background-color: white;
+}
+.search-input {
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    line-height: 40px;
+    background: transparent;
+    outline: none;
+    padding: 0 45px 0 10px;
+    border: none;
+    overflow: hidden;
+    background: white;
+    border-radius: 6px !important;
+    font-size: 14px;
+    color: #999ea1;
+}
+.search-icon {
+    position: absolute;       
+    right: 10px;               
+    top: 50%;                  
+    transform: translateY(-50%); 
+    width: 20px;             
+    height: 20px;
+    cursor: pointer;          
+    transition: opacity 0.3s; 
+}
+.search-icon:hover {
+    opacity: 0.7;             
+}
+
+@media (max-width:750px){    
+    .navbar-menu{
+       display: none;
+    }
+}

@@ -1,0 +1,85 @@
+.product-detail {
+  padding: 20px;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.return-button {
+  margin-bottom: 30px;
+  margin-right: 90%;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #007bff;
+}
+
+.return-button:hover {
+  text-decoration:none;
+}
+
+.product-detail img {
+  margin-right: 80%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.product-detail h1 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.product-detail p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.product-detail button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-detail button:hover {
+  background-color: #218838;
+}
+
+.related-products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.related-products .food-item {
+  margin: 10px;
+  flex: 1 0 21%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.related-products img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.related-products h3, .related-products p {
+  margin: 0;
+}
+
+.related-products h2 {
+  margin-top: 40px;
+  font-size: 22px;
+  text-align: center;
+}
