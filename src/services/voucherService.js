@@ -1,26 +1,53 @@
-import { get, post, put, del } from './apiClient';
+// voucherService.js
+import apiClient from './apiClient.js';
 
-// Fetch the list of vouchers
+const BASE_URL = '/api/vouchers';
+
+/**
+ * Fetch the list of vouchers
+ * @param {Object} filters - Filters for fetching vouchers
+ */
 export const fetchVouchersService = async (filters = {}) => {
-  return await get('/api/voucher/list', filters);
+  return await apiClient.get(`${BASE_URL}`, filters, true);
 };
 
-// Fetch a voucher by its code
+/**
+ * Fetch a voucher by its code
+ * @param {string} code - Voucher code
+ */
 export const fetchVoucherByCodeService = async (code) => {
-  return await get(`/api/voucher/${code}`);
+  return await  apiClient.get(`${BASE_URL}/${code}`, {}, true);
 };
 
-// Add a new voucher
+/**
+ * Add a new voucher
+ * @param {Object} voucher - Voucher data
+ */
 export const createVoucherService = async (voucher) => {
-  return await post('/api/voucher/add', voucher);
+  return await apiClient.post(`${BASE_URL}`, voucher, true);
 };
 
-// Update a voucher by its code
+/**
+ * Update a voucher by its code
+ * @param {string} code - Voucher code
+ * @param {Object} voucher - Updated voucher data
+ */
 export const updateVoucherService = async (code, voucher) => {
-  return await put(`/api/voucher/update/${code}`, voucher);
+  return await apiClient.put(`${BASE_URL}/${code}`, voucher, true);
 };
 
-// Delete a voucher by its code
+/**
+ * Delete a voucher by its code
+ * @param {string} code - Voucher code
+ */
 export const deleteVoucherService = async (code) => {
-  return await del(`/api/voucher/${code}`);
+  return await apiClient.del(`${BASE_URL}/${code}`, true);
+};
+
+/**
+ * Get vouchers by user
+ * @param {string} userId - User ID
+ */
+export const getVouchersByUserService = async (userId) => {
+  return await apiClient.get(`${BASE_URL}/user`, { userId }, true);
 };

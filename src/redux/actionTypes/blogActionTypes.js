@@ -1,0 +1,26 @@
+// blogActionType.js
+
+// Lấy danh sách bài viết
+export const GET_BLOGS_REQUEST = 'GET_BLOGS_REQUEST';
+export const GET_BLOGS_SUCCESS = 'GET_BLOGS_SUCCESS';
+export const GET_BLOGS_FAILURE = 'GET_BLOGS_FAILURE';
+
+// Lấy bài viết theo ID
+export const GET_BLOG_BY_ID_REQUEST = 'GET_BLOG_BY_ID_REQUEST';
+export const GET_BLOG_BY_ID_SUCCESS = 'GET_BLOG_BY_ID_SUCCESS';
+export const GET_BLOG_BY_ID_FAILURE = 'GET_BLOG_BY_ID_FAILURE';
+
+// Tạo mới bài viết
+export const CREATE_BLOG_REQUEST = 'CREATE_BLOG_REQUEST';
+export const CREATE_BLOG_SUCCESS = 'CREATE_BLOG_SUCCESS';
+export const CREATE_BLOG_FAILURE = 'CREATE_BLOG_FAILURE';
+
+// Cập nhật bài viết
+export const UPDATE_BLOG_REQUEST = 'UPDATE_BLOG_REQUEST';
+export const UPDATE_BLOG_SUCCESS = 'UPDATE_BLOG_SUCCESS';
+export const UPDATE_BLOG_FAILURE = 'UPDATE_BLOG_FAILURE';
+
+// Xóa bài viết
+export const DELETE_BLOG_REQUEST = 'DELETE_BLOG_REQUEST';
+export const DELETE_BLOG_SUCCESS = 'DELETE_BLOG_SUCCESS';
+export const DELETE_BLOG_FAILURE = 'DELETE_BLOG_FAILURE';

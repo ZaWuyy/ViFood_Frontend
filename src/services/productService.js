@@ -1,21 +1,51 @@
-import { get, post } from './apiClient';
+// productService.js
+import apiClient from './apiClient.js';
 
-// Fetch the list of foods
-export const fetchFoodListService = async () => {
-  return await get('/api/food/list');
+const BASE_URL = '/api/products';
+
+/**
+ * Get all products
+ */
+export const getProductsService = async () => {
+  return await apiClient.get(`${BASE_URL}`, {}, false);
 };
 
-// Add a new food item
-export const addFoodService = async (foodData) => {
-  return await post('/api/food/add', foodData);
+/**
+ * Get a product by ID
+ * @param {string} id - Product ID
+ */
+export const getProductByIdService = async (id) => {
+  return await apiClient.get(`${BASE_URL}/${id}`, {}, false);
 };
 
-// Remove a food item
-export const removeFoodService = async (foodId) => {
-  return await post('/api/food/remove', { id: foodId });
+/**
+ * Create a new product
+ * @param {Object} productData - Data for the new product
+ */
+export const createProductService = async (productData) => {
+  return await apiClient.post(`${BASE_URL}`, productData, true);
 };
 
-// Update a food item
-export const updateFoodService = async (foodData) => {
-  return await post('/api/food/update', foodData);
+/**
+ * Update a product
+ * @param {string} id - Product ID
+ * @param {Object} productData - Updated product data
+ */
+export const updateProductService = async (id, productData) => {
+  return await apiClient.put(`${BASE_URL}/${id}`, productData, true);
+};
+
+/**
+ * Delete a product
+ * @param {string} id - Product ID
+ */
+export const deleteProductService = async (id) => {
+  return await apiClient.del(`${BASE_URL}/${id}`, true);
+};
+
+/**
+ * Get products by user
+ */
+export const getProductsByUserService = async () => {
+  return await apiClient.get(`${BASE_URL}/user`, {}, true);
 };

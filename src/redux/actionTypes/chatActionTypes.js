@@ -1,0 +1,21 @@
+// chatActionType.js
+
+// Lấy tất cả các cuộc trò chuyện
+export const GET_CHATS_REQUEST = 'GET_CHATS_REQUEST';
+export const GET_CHATS_SUCCESS = 'GET_CHATS_SUCCESS';
+export const GET_CHATS_FAILURE = 'GET_CHATS_FAILURE';
+
+// Lấy hoặc tạo cuộc trò chuyện với một người dùng cụ thể
+export const GET_OR_CREATE_CHAT_REQUEST = 'GET_OR_CREATE_CHAT_REQUEST';
+export const GET_OR_CREATE_CHAT_SUCCESS = 'GET_OR_CREATE_CHAT_SUCCESS';
+export const GET_OR_CREATE_CHAT_FAILURE = 'GET_OR_CREATE_CHAT_FAILURE';
+
+// Gửi tin nhắn trong cuộc trò chuyện
+export const SEND_MESSAGE_REQUEST = 'SEND_MESSAGE_REQUEST';
+export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';
+export const SEND_MESSAGE_FAILURE = 'SEND_MESSAGE_FAILURE';
+
+// Xóa ảnh khỏi tin nhắn
+export const DELETE_MESSAGE_IMAGE_REQUEST = 'DELETE_MESSAGE_IMAGE_REQUEST';
+export const DELETE_MESSAGE_IMAGE_SUCCESS = 'DELETE_MESSAGE_IMAGE_SUCCESS';
+export const DELETE_MESSAGE_IMAGE_FAILURE = 'DELETE_MESSAGE_IMAGE_FAILURE';
