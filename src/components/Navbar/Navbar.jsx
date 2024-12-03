@@ -1,33 +1,45 @@
-import React, { useContext, useState } from "react";
+// src/components/Navbar.jsx
+
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
-import { StoreContext } from "../../context/StoreContext";
-import LoginPopup from "../LoginPopup/LoginPopup";
+import { useDispatch, useSelector } from "react-redux";
+import SignInPage from "../../pages/Authentication/SignInPage/SignInPage";
+import { logoutAction } from "../../redux/actions/authAction";
+import { addToCart, removeFromCart, getCart } from "../../redux/actions/cartAction";
+import { getProducts } from "../../redux/actions/productAction";
 
-const Navbar = ({ setShowLogin }) => {
+const Navbar = () => {
   const [menu, setMenu] = useState("home");
-  const [showLoginPopup, setShowLoginPopup] = useState(false);
-  const [showSuggestions, setShowSuggestions] = useState(false);  // Mới thêm state này
-  const [search, setSearch] = useState(""); // State lưu giá trị tìm kiếm
-  const {
-    getTotalCartCount,
-    token,
-    setToken,
-    fetchFoodList,  // API lấy danh sách món ăn
-    searchSuggestions,  // API gợi ý tìm kiếm
-    state,  // Truy cập trạng thái hiện tại của StoreContext
-  } = useContext(StoreContext);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSearch = async (e) => {
+  const cart = useSelector((state) => state.cart);
+  const { cartItems, totalCartCount } = cart;
+
+  const auth = useSelector((state) => state.auth);
+  const { token } = auth;
+
+  const products = useSelector((state) => state.product);
+  const { searchSuggestions } = products;
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getCart(token));
+    }
+  }, [dispatch, token]);
+
+  const handleSearch = (e) => {
     const value = e.target.value;
     setSearch(value);
     if (value) {
-      await fetchFoodList(value); // Gọi API để lấy gợi ý
-      setShowSuggestions(true);  // Hiển thị suggestion box khi có dữ liệu
+      setShowSuggestions(true);
     } else {
-      setShowSuggestions(false);  // Ẩn suggestion box khi không có giá trị tìm kiếm
+      setShowSuggestions(false);
     }
   };
 
@@ -38,28 +50,31 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   const handleSearchSubmit = () => {
-    navigate("/"); // Điều hướng đến trang Home
-    fetchFoodList(search); // Lấy danh sách món ăn dựa trên từ khóa
-    setShowSuggestions(false); // Ẩn suggestion box sau khi nhấn enter
+    navigate("/");
+    dispatch(getProducts(search));
+    setShowSuggestions(false);
   };
 
   const handleSuggestionClick = (id) => {
-    navigate(`/product/${id}`); // Điều hướng đến trang sản phẩm khi click vào gợi ý
-    setShowSuggestions(false); // Ẩn suggestion box khi click vào sản phẩm
+    navigate(`/product/${id}`);
+    setShowSuggestions(false);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    setToken("");
+  const handleLogout = () => {
+    dispatch(logoutAction());
     navigate("/");
   };
 
   const handleCartClick = () => {
     if (!token) {
-      setShowLoginPopup(true);
+      navigate("/signin"); // Chuyển hướng tới trang SignIn
     } else {
       navigate("/cart");
     }
+  };
+
+  const handleSignInClick = () => {
+    navigate("/login"); // Chuyển hướng tới trang SignIn
   };
 
   return (
@@ -75,8 +90,8 @@ const Navbar = ({ setShowLogin }) => {
               placeholder="Search..."
               className="search-input"
               value={search}
-              onChange={handleSearch} // Gọi hàm tìm kiếm khi nhập
-              onKeyDown={handleKeyDown} // Tìm kiếm khi nhấn Enter
+              onChange={handleSearch}
+              onKeyDown={handleKeyDown}
             />
             {search && showSuggestions && searchSuggestions.length > 0 && (
               <ul className="search-suggestions active">
@@ -91,7 +106,7 @@ const Navbar = ({ setShowLogin }) => {
               src={assets.search_icon}
               alt="Search"
               className="search-icon"
-              onClick={handleSearchSubmit} // Gửi từ khóa tìm kiếm
+              onClick={handleSearchSubmit}
             />
           </div>
         </div>
@@ -109,12 +124,12 @@ const Navbar = ({ setShowLogin }) => {
           </div>
           <div className="navbar-cart-icon" onClick={handleCartClick}>
             <img src={assets.basket_icon} alt="Cart" />
-            {getTotalCartCount() > 0 && (
-              <div className="cart-badge">{getTotalCartCount()}</div>
+            {totalCartCount > 0 && (
+              <div className="cart-badge">{totalCartCount}</div>
             )}
           </div>
           {!token ? (
-            <button onClick={() => setShowLogin(true)}>Sign in</button>
+            <button onClick={handleSignInClick}>Sign in</button>
           ) : (
             <div className="navbar-profile">
               <img src={assets.profile_icon} alt="Profile" />
@@ -124,7 +139,7 @@ const Navbar = ({ setShowLogin }) => {
                   <p>Orders</p>
                 </li>
                 <hr />
-                <li onClick={logout}>
+                <li onClick={handleLogout}>
                   <img src={assets.logout_icon} alt="Logout" />
                   <p>Logout</p>
                 </li>
@@ -132,7 +147,6 @@ const Navbar = ({ setShowLogin }) => {
             </div>
           )}
         </div>
-        {showLoginPopup && <LoginPopup setShowLogin={setShowLoginPopup} />}
       </div>
       <div className="navbar-bottom">
         <ul className="navbar-menu">

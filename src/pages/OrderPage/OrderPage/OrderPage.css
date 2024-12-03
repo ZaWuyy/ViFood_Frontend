@@ -1,0 +1,41 @@
+/* Order Page Styling */
+.order-page {
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+/* Styling for the order page title */
+.order-page-title {
+  text-align: center;
+  color: #f45b69; /* Cam đỏ (red-orange) */
+}
+
+/* Styling for the order table */
+.order-table {
+  background-color: #fff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Styling for the table header */
+.order-table .ant-table-thead > tr > th {
+  background-color: #f0f0f0; /* Light gray background for headers */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+}
+
+/* Styling for table cells */
+.order-table .ant-table-tbody > tr > td {
+  text-align: center; /* Center text */
+}
+
+/* Styling for Ant Design buttons */
+.order-table .ant-btn {
+  border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Styling for Ant Design tags */
+.order-table .ant-tag {
+  font-size: 14px; /* Smaller font size */
+  padding: 5px 10px; /* Padding for the tag */
+}

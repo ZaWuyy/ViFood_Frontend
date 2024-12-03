@@ -1,28 +1,28 @@
 // chatService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/chats';
+import axios from 'axios';
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/chats`;
 
 //Lấy tất cả các cuộc trò chuyện của người dùng hiện tại
 
 export const getChatsService = async () => {
-  return await apiClient.get(`${BASE_URL}`, {}, true);
+  return await api.get(`${BASE_URL}`);
 };
 
 // Lấy hoặc tạo cuộc trò chuyện với một người dùng cụ thể
 
 export const getOrCreateChatService = async (userId) => {
-  return await apiClient.get(`${BASE_URL}/${userId}`, {}, true);
+  return await api.get(`${BASE_URL}/${userId}`);
 };
 
 // Gửi tin nhắn trong cuộc trò chuyện
 
 export const sendMessageService = async (messageData) => {
-  return await apiClient.post(`${BASE_URL}/messages`, messageData, true);
+  return await api.post(`${BASE_URL}/messages`, messageData);
 };
 
 // Xóa ảnh khỏi tin nhắn
 
 export const deleteMessageImageService = async (imageId) => {
-  return await apiClient.del(`${BASE_URL}/messages/image?id=${imageId}`, true);
+  return await api.delete(`${BASE_URL}/messages/image?id=${imageId}`);
 };

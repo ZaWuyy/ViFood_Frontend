@@ -22,12 +22,12 @@ import {
   } from '../actionTypes/productActionTypes.js';
   
   import {
-    getProducts as getProductsService,
-    getProductById as getProductByIdService,
-    createProduct as createProductService,
-    updateProduct as updateProductService,
-    deleteProduct as deleteProductService,
-    getProductsByUser as getProductsByUserService,
+    getProductsService,
+    getProductByIdService,
+    createProductService,
+    updateProductService,
+    deleteProductService,
+    getProductsByUserService,
   } from '../../services/productService.js';
   
   // Get All Products

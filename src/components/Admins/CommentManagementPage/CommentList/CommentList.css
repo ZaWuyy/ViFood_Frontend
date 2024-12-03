@@ -1,0 +1,51 @@
+/* src/components/CommentList.css */
+
+.comment-list-table {
+  margin-top: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center;
+}
+
+.ant-btn-default {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  border-radius: 4px;
+}
+
+.ant-btn-default:hover {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.ant-btn-dangerous {
+  color: #ff4d4f;
+}
+
+.ant-btn-dangerous:hover {
+  color: #ff7875;
+}
+
+.ant-popover-title {
+  font-weight: bold;
+}
+
+.ant-space {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-pagination {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+}

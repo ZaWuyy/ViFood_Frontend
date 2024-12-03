@@ -1,0 +1,19 @@
+/* Error Page Styling */
+.error-page {
+  margin-top: 100px;
+  text-align: center; /* Center the content */
+}
+
+/* Go Home Button Styling */
+.error-page .go-home-button {
+  background-color: #2e8b57; /* Sea green background */
+  color: white; /* White text color */
+  font-size: 1.25rem; /* Larger font size */
+  border-radius: 5px; /* Rounded corners */
+  padding: 12px 25px; /* Padding around the button text */
+}
+
+/* Hover effect for Go Home Button */
+.error-page .go-home-button:hover {
+  background-color: #276d44; /* Darker green when hovered */
+}

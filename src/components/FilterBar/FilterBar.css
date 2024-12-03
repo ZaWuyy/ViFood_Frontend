@@ -1,0 +1,49 @@
+/* Filter Container Styling */
+.filter-container {
+  padding: 1.5rem; /* Adds padding around the filter container */
+  background-color: #ffffff; /* White background color */
+  border-radius: 8px; /* Rounded corners for the filter container */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds shadow around the container */
+  margin-bottom: 2rem; /* Adds space below the filter container */
+}
+
+/* Filter Title Styling */
+.filter-container h3 {
+  margin-bottom: 1rem; /* Adds space below the title */
+  text-align: center; /* Centers the title text */
+  color: #333; /* Dark gray color for the title */
+}
+
+/* Filter Section Styling */
+.filter-container .filter-section {
+  margin-bottom: 1.5rem; /* Adds space below each filter section */
+}
+
+/* Filter Sub-title Styling */
+.filter-container .filter-section h4 {
+  margin-bottom: 0.5rem; /* Adds space below the subtitle */
+  color: #555; /* Medium gray color for the subtitles */
+}
+
+/* Styling for Ant Design Select Component */
+.filter-container .filter-section .ant-select {
+  width: 100%; /* Makes the select component take up the full width */
+}
+
+/* Styling for Ant Design Slider */
+.filter-container .filter-section .ant-slider {
+  margin-top: 1rem; /* Adds space above the slider */
+}
+
+/* Clear Filters Button Styling */
+.filter-container .clear-filters-button {
+  width: 100%; /* Makes the button take up the full width */
+  background-color: #f5222d; /* Red background color */
+  border-color: #f5222d; /* Red border color */
+}
+
+/* Clear Filters Button Hover Styling */
+.filter-container .clear-filters-button:hover {
+  background-color: #cf1322; /* Darker red background color on hover */
+  border-color: #cf1322; /* Darker red border color on hover */
+}

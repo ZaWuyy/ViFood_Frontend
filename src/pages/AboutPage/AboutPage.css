@@ -1,0 +1,83 @@
+/* About Page Styling */
+.about-page {
+  padding: 50px;
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+/* About Header Styling */
+.about-page .about-header {
+  text-align: center; /* Center the content */
+  margin-bottom: 40px; /* Space below the header */
+}
+
+.about-page .about-header .about-title {
+  font-size: 3rem; /* Large font size for the title */
+  font-weight: 700; /* Bold font */
+  color: #2e8b57; /* Sea green color */
+}
+
+.about-page .about-header .about-description {
+  font-size: 1.25rem; /* Slightly larger font for description */
+  color: #555; /* Dark grey color */
+  margin-top: 10px; /* Space between title and description */
+}
+
+/* About Content Section */
+.about-page .about-content {
+  margin-bottom: 40px; /* Space below the content */
+}
+
+/* About Card Styling */
+.about-page .about-card {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-page .about-card .ant-card-body {
+  padding: 20px; /* Padding inside card */
+}
+
+.about-page .about-card .ant-card-cover {
+  border-radius: 10px; /* Rounded corners for the cover image */
+}
+
+.about-page .about-card .ant-card-meta-title {
+  font-size: 1.25rem; /* Font size for the title inside the card */
+  color: #333; /* Dark color for title */
+}
+
+.about-page .about-card .ant-card-meta-description {
+  font-size: 1rem; /* Slightly smaller font for the description inside the card */
+  color: #777; /* Grey color for description */
+  margin-top: 10px; /* Space between title and description */
+}
+
+/* Learn More Button */
+.about-page .learn-more-button {
+  margin-top: 15px; /* Space above the button */
+  background-color: #2e8b57; /* Sea green background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.about-page .learn-more-button:hover {
+  background-color: #276d44; /* Darker green when hovered */
+}
+
+/* About Footer Section */
+.about-page .about-footer {
+  text-align: center; /* Center the footer content */
+}
+
+/* Join Now Button */
+.about-page .about-footer .join-now-button {
+  background-color: #2e8b57; /* Sea green background */
+  color: white; /* White text */
+  font-size: 1.25rem; /* Larger font size */
+  border-radius: 5px; /* Rounded corners */
+  padding: 12px 25px; /* Padding inside the button */
+}
+
+.about-page .about-footer .join-now-button:hover {
+  background-color: #276d44; /* Darker green when hovered */
+}

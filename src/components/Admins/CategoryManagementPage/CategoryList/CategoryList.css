@@ -1,0 +1,76 @@
+/* src/components/CategoryList.css */
+
+.category-list-table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #595959;
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center;
+  color: #333;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #e6f7ff;
+}
+
+.ant-table-tbody > tr > td:last-child {
+  text-align: right;
+}
+
+.ant-btn-default {
+  border-radius: 6px;
+}
+
+.ant-btn-default:hover {
+  color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-btn-danger-text {
+  color: #ff4d4f;
+}
+
+.ant-btn-danger-text:hover {
+  color: #ff7875;
+}
+
+.ant-space {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-popconfirm-message {
+  text-align: center;
+  font-weight: 500;
+}
+
+.ant-table-pagination {
+  margin-top: 16px;
+}
+
+.ant-pagination-item {
+  border-radius: 50%;
+}
+
+.ant-pagination-item-active {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-pagination-item-active a {
+  color: white;
+}

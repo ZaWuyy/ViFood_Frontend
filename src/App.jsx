@@ -9,15 +9,26 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
 
+import SignInPage from './pages/Authentication/SignInPage/SignInPage';
+import SignUpPage from './pages/Authentication/SignUpPage/SignUpPage';
+import ForgotPasswordPage from './pages/Authentication/ForgotPasswordPage/ForgotPasswordPage';
+import ResetPasswordPage from './pages/Authentication/ResetPasswordPage/ResetPasswordPage';
+import EmailValidationPage from './pages/Authentication/EmailValidationPage/EmailValidationPage';
+
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
     <>
-      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : null}
+      {showLogin ? <SignInPage setShowLogin={setShowLogin} /> : null}
       <div className='app'>
-        <Navbar setShowLogin={setShowLogin} />
+        
         <Routes>
+          <Route path='/login' element={<SignInPage />} />
+          <Route path='/register' element={<SignUpPage />} />
+          <Route path='/forgot-password' element={<ForgotPasswordPage />} />
+          <Route path='/reset-password/:Token' element={<ResetPasswordPage />} />
+          <Route path='/email-validation' element={<EmailValidationPage />} />
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
@@ -30,4 +41,3 @@ const App = () => {
 };
 
 export default App;
-

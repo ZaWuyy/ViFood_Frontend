@@ -1,0 +1,103 @@
+/* Container for the entire product management page */
+.product-management-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.product-management-page h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style for the Add Product button */
+.ant-btn-primary {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* Table styling */
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ant-table-bordered {
+  border: 1px solid #d9d9d9;
+}
+
+/* Modal styling */
+.ant-modal {
+  border-radius: 8px;
+}
+
+.ant-modal-header {
+  background-color: #f0f2f5;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for modal buttons */
+.ant-btn {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.ant-btn-danger {
+  background-color: #f5222d;
+  border-color: #f5222d;
+}
+
+.ant-btn-danger:hover {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+/* Styling for modal footer */
+.ant-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* Space between the modal and form components */
+.ant-space {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Styling for product and variant table rows */
+.ant-table-tbody > tr > td {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Styling for the delete popconfirm */
+.ant-popover-inner {
+  border-radius: 8px;
+}
+
+/* Add margin to the bottom of the tables */
+.ant-table-wrapper {
+  margin-bottom: 20px;
+}

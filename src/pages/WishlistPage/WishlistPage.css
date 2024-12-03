@@ -1,0 +1,25 @@
+/* WishlistPage.css */
+
+/* Container for the wishlist page */
+.wishlist-container {
+  padding: 2rem;
+  background-color: #f0f2f5; /* Light gray background */
+}
+
+/* Typography styling */
+.wishlist-container .ant-typography {
+  text-align: center; /* Center text */
+  margin-bottom: 2rem; /* Space below the text */
+}
+
+/* Actions section */
+.wishlist-container .wishlist-actions {
+  display: flex;
+  justify-content: space-between; /* Space out the buttons evenly */
+  margin-top: 1rem; /* Space above the actions */
+}
+
+/* Button styling */
+.wishlist-container .wishlist-actions .ant-btn {
+  width: 48%; /* Make each button take up 48% of the available width */
+}

@@ -1,0 +1,104 @@
+/* Signin.css */
+
+/* Container for the sign-in page */
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Form container styling */
+.signin-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.signin-title {
+  text-align: center;
+  color: #f45b69; /* Red-orange color */
+}
+
+/* Label styling */
+.ant-form-item-label > label {
+  color: #4caf50; /* Green color */
+}
+
+/* Input fields styling */
+.ant-input,
+.ant-input-password {
+  border-radius: 5px;
+  border: 1px solid #4caf50;
+  width: 100%; /* Ensure it takes up 100% of the container */
+  height: 40px; /* Set fixed height */
+  box-sizing: border-box; /* Ensure padding and border don't increase size */
+}
+
+/* Password input field specific styling */
+.ant-input-password {
+  box-shadow: none !important; /* Remove any box-shadow */
+  background: transparent !important; /* Ensure background is transparent */
+}
+
+.ant-input-password input {
+  background: transparent !important; /* Ensure background is transparent */
+  box-shadow: none !important;
+  border: none !important; /* Remove border */
+  padding: 8px 12px; /* Adjust padding if needed */
+  height: 100%; /* Ensure full height */
+}
+
+/* Button styling */
+.signin-button {
+  background-color: #4caf50; /* Green color */
+  border-color: #4caf50;
+  width: 100%;
+  font-weight: bold;
+  height: 40px; /* Ensure button height matches input height */
+}
+
+.signin-button:hover {
+  background-color: #f45b69; /* Red-orange color */
+  border-color: #f45b69;
+}
+
+/* Remember me checkbox styling */
+.remember-me {
+  margin-bottom: 1rem;
+}
+
+.remember-me .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.remember-me .ant-checkbox-inner {
+  border-color: #4caf50;
+}
+
+.remember-me .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+  border-color: #f45b69; /* Red-orange color on hover */
+}
+
+/* Forgot password and sign-up link styling */
+.forgot-password-link,
+.signup-link {
+  color: #f45b69; /* Red-orange color */
+}
+
+.forgot-password-link:hover,
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.forgot-password-link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}

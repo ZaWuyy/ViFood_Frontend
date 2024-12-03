@@ -1,0 +1,105 @@
+/* VoucherManagementPage.css */
+
+/* Container for the voucher management page */
+.voucher-management-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Page title styling */
+.voucher-management-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Add Voucher button styling */
+.voucher-management-page .ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.voucher-management-page .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* Table styling */
+.voucher-management-page .ant-table {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.voucher-management-page .ant-table-thead > tr > th {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Table row styling */
+.voucher-management-page .ant-table-tbody > tr > td {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Action buttons (Edit, Delete) in table */
+.voucher-management-page .ant-btn {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.voucher-management-page .ant-btn:hover {
+  background-color: #e6f7ff;
+}
+
+/* Modal styling */
+.voucher-management-page .ant-modal {
+  width: 600px;
+  max-width: 90%;
+  border-radius: 8px;
+}
+
+.voucher-management-page .ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.voucher-management-page .ant-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Modal form styling */
+.voucher-management-page .voucher-form-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Modal buttons (Add, Cancel) styling */
+.voucher-management-page .ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  font-size: 16px;
+}
+
+.voucher-management-page .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.voucher-management-page .ant-btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.voucher-management-page .ant-btn + .ant-btn {
+  margin-left: 8px;
+}

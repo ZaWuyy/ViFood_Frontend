@@ -1,24 +1,25 @@
 // blogService.js
-import apiClient from './apiClient.js';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
 
-const BASE_URL = '/api/blogs';
+const BASE_URL = `${API_BASE_URL}/api/blogs`;
 
 export const getBlogsService = async () => {
-  return await apiClient.get(BASE_URL, {}, false);
+  return await axios.get(BASE_URL);
 };
 
 export const getBlogByIdService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, false);
+  return await axios.get(`${BASE_URL}/${id}`);
 };
 
 export const createBlogService = async (data) => {
-  return await apiClient.post(BASE_URL, data, true);
+  return await api.post(BASE_URL, data);
 };
 
 export const updateBlogService = async (id, data) => {
-  return await apiClient.put(`${BASE_URL}/${id}`, data, true);
+  return await api.put(`${BASE_URL}/${id}`, data);
 };
 
 export const deleteBlogService = async (id) => {
-  return await apiClient.del(`${BASE_URL}/${id}`, true);
+  return await api.delete(`${BASE_URL}/${id}`);
 };

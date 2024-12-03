@@ -1,0 +1,76 @@
+/* Rating Container Styling */
+.rating-container {
+  padding: 2rem; /* Padding inside the container */
+  background-color: #ffffff; /* White background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow around the container */
+}
+
+/* Styling for each List Item */
+.rating-container .ant-list-item {
+  padding: 1rem 0; /* Padding for top and bottom */
+  border-bottom: 1px solid #f0f0f0; /* Border at the bottom of each item */
+}
+
+/* Removing bottom border from the last item */
+.rating-container .ant-list-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+/* Rating Header Styling */
+.rating-container .ant-list-item .rating-header {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out the elements */
+  align-items: center; /* Vertically center the elements */
+  margin-bottom: 0.5rem; /* Margin below the header */
+}
+
+/* Rating Score Styling */
+.rating-container .ant-list-item .rating-score {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically align the elements */
+}
+
+/* Ant Rate Icon Styling */
+.rating-container .ant-list-item .rating-score .ant-rate {
+  margin-right: 8px; /* Space to the right of the rating icon */
+}
+
+/* Rating Number Styling */
+.rating-container .ant-list-item .rating-score .rating-number {
+  font-size: 14px; /* Font size for the rating number */
+  color: #f45b69; /* Red-orange color */
+}
+
+/* Typography Styling */
+.rating-container .ant-list-item .ant-typography {
+  margin-bottom: 0; /* Remove margin below typography */
+}
+
+/* Rating Image Gallery Styling */
+.rating-container .ant-list-item .rating-images {
+  margin-top: 1rem; /* Space above the images */
+  display: flex; /* Use flexbox to align images */
+  flex-wrap: wrap; /* Allow images to wrap onto the next line */
+}
+
+/* Styling for each image in the gallery */
+.rating-container .ant-list-item .rating-images .ant-image {
+  border-radius: 4px; /* Rounded corners for images */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for images */
+.rating-container .ant-list-item .rating-images .ant-image:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Rating Date Styling */
+.rating-container .ant-list-item .rating-date {
+  display: block; /* Block display for the date */
+  margin-top: 0.5rem; /* Space above the date */
+  text-align: right; /* Align the text to the right */
+  color: #888; /* Gray color for the date */
+  font-size: 12px; /* Font size for the date */
+}

@@ -1,7 +1,7 @@
 // ratingService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/ratings';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/ratings`;
 
 /**
  * Tạo mới đánh giá hỗ trợ upload ảnh
@@ -14,14 +14,14 @@ export const createRatingService = async (ratingData, imageFile) => {
   if (imageFile) {
     formData.append('image', imageFile);
   }
-  return await apiClient.post(`${BASE_URL}`, formData, true);
+  return await api.post(`${BASE_URL}`, formData);
 };
 
 /**
  * Lấy tất cả các đánh giá
  */
 export const getAllRatingsService = async () => {
-  return await apiClient.get(`${BASE_URL}`, {}, false);
+  return await axios.get(`${BASE_URL}`);
 };
 
 /**
@@ -29,7 +29,7 @@ export const getAllRatingsService = async () => {
  * @param {string} id - ID của đánh giá
  */
 export const getSpecificRatingByIdService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, false);
+  return await axios.get(`${BASE_URL}/${id}`);
 };
 
 /**
@@ -37,7 +37,7 @@ export const getSpecificRatingByIdService = async (id) => {
  * @param {string} userId - ID của người dùng
  */
 export const getRatingsByUserService = async (userId) => {
-  return await apiClient.get(`${BASE_URL}/user/${userId}`, {}, true);
+  return await api.get(`${BASE_URL}/user/${userId}`);
 };
 
 /**
@@ -45,7 +45,7 @@ export const getRatingsByUserService = async (userId) => {
  * @param {string} productId - ID của sản phẩm
  */
 export const getRatingsByProductService = async (productId) => {
-  return await apiClient.get(`${BASE_URL}/product/${productId}`, {}, false);
+  return await axios.get(`${BASE_URL}/product/${productId}`);
 };
 
 /**
@@ -60,7 +60,7 @@ export const updateRatingService = async (id, ratingData, imageFile) => {
   if (imageFile) {
     formData.append('image', imageFile);
   }
-  return await apiClient.put(`${BASE_URL}/${id}`, formData, true);
+  return await api.put(`${BASE_URL}/${id}`, FormData);
 };
 
 /**
@@ -68,5 +68,5 @@ export const updateRatingService = async (id, ratingData, imageFile) => {
  * @param {string} id - ID của đánh giá
  */
 export const deleteRatingService = async (id) => {
-  return await apiClient.del(`${BASE_URL}/${id}`, true);
+  return await api.delete(`${BASE_URL}/${id}`);
 };

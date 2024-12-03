@@ -1,0 +1,10 @@
+/* src/pages/BlogPage.scss */
+
+.blogs-page {
+    padding: 24px;
+}
+  
+.h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}

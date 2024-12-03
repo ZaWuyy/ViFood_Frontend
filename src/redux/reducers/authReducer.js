@@ -3,6 +3,9 @@ import {
     REGISTER_REQUEST,
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
+    RESEND_OTP_REQUEST,
+    RESEND_OTP_SUCCESS,
+    RESEND_OTP_FAILURE,
     VERIFY_EMAIL_OTP_REQUEST,
     VERIFY_EMAIL_OTP_SUCCESS,
     VERIFY_EMAIL_OTP_FAILURE,
@@ -34,6 +37,14 @@ import {
         return { ...state, loading: false, user: action.payload };
       case REGISTER_FAILURE:
         return { ...state, loading: false, error: action.payload };
+
+      // Resend OTP
+      case RESEND_OTP_REQUEST:
+        return { ...state, loading: true, error: null };
+      case RESEND_OTP_SUCCESS:
+        return { ...state, loading: false };
+      case RESEND_OTP_FAILURE:
+        return { ...state, loading: false, error: action.payload };
   
       // Verify Email OTP
       case VERIFY_EMAIL_OTP_REQUEST:
@@ -45,10 +56,10 @@ import {
   
       // Login
       case LOGIN_REQUEST:
-        return { ...state, loading: true, error: null };
+        return { ...state, loading: true, error: null,user: action.payload };
       case LOGIN_SUCCESS:
-        localStorage.setItem('jwt', action.payload.token);
-        return { ...state, loading: false, user: action.payload.user, token: action.payload.token };
+        localStorage.setItem('jwt', action.payload);
+        return { ...state, loading: false,  token: action.payload };
       case LOGIN_FAILURE:
         return { ...state, loading: false, error: action.payload };
   
@@ -64,7 +75,7 @@ import {
       case RESET_PASSWORD_REQUEST:
         return { ...state, loading: true, error: null };
       case RESET_PASSWORD_SUCCESS:
-        return { ...state, loading: false };
+        return { ...state, loading: false, user: action.payload };
       case RESET_PASSWORD_FAILURE:
         return { ...state, loading: false, error: action.payload };
   

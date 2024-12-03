@@ -1,4 +1,6 @@
 // userAction.js
+import axios  from 'axios';
+import { api, API_BASE_URL  } from '../../api/api.js';
 
 import {
     FETCH_PROFILE_REQUEST,
@@ -42,33 +44,25 @@ import {
     REMOVE_FAVORITE_PRODUCT_FAILURE,
   } from '../actionTypes/userActionTypes.js';
   
-  import {
-    fetchProfileService,
-    updateProfileService,
-    sendVerificationEmailService,
-    verifyEmailService,
-    createUserService,
-    updateUserService,
-    deleteUserService,
-    getUserService,
-    getUsersService,
-    addVoucherService,
-    removeVoucherService,
-    addFavoriteProductService,
-    removeFavoriteProductService,
-  } from '../../services/userService.js';
+ 
   
   // Fetch User Profile
-  export const fetchProfile = () => async (dispatch) => {
+  export const getCurrentUserByJwt = (jwt) => async (dispatch) => {
     dispatch({ type: FETCH_PROFILE_REQUEST });
     try {
-      const data = await fetchProfileService();
-      dispatch({ type: FETCH_PROFILE_SUCCESS, payload: data });
-    } catch (error) {
-      dispatch({
-        type: FETCH_PROFILE_FAILURE,
-        payload: error.response?.data?.message || error.message,
+      const { data } = await axios.get(`${API_BASE_URL}/api/users/profile`, {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
       });
+      dispatch({ type: FETCH_PROFILE_SUCCESS, payload: data });
+      return { payload: data };
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        dispatch({ type: FETCH_PROFILE_FAILURE, payload: "Session expired. Please sign in again." });
+        return { error: "UNAUTHORIZED" };
+      }
+      dispatch({ type: FETCH_PROFILE_FAILURE, payload: error.message });
     }
   };
   
@@ -76,8 +70,9 @@ import {
   export const updateProfile = (profileData, avatarFile) => async (dispatch) => {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
     try {
-      const data = await updateProfileService(profileData, avatarFile);
+      const {data} = await api.post(`${API_BASE_URL}/users/profile`,profileData, avatarFile);
       dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data });
+      return { payload: data };
     } catch (error) {
       dispatch({
         type: UPDATE_PROFILE_FAILURE,
@@ -90,7 +85,7 @@ import {
   export const sendVerificationEmail = (emailData) => async (dispatch) => {
     dispatch({ type: SEND_VERIFICATION_EMAIL_REQUEST });
     try {
-      await sendVerificationEmailService(emailData);
+      await api.post(`${API_BASE_URL}/users/send-verification-email`, {emailData});
       dispatch({ type: SEND_VERIFICATION_EMAIL_SUCCESS });
     } catch (error) {
       dispatch({
@@ -101,11 +96,12 @@ import {
   };
   
   // Verify Email
-  export const verifyEmail = (verificationData) => async (dispatch) => {
+  export const verifyEmail = (token, email) => async (dispatch) => {
     dispatch({ type: VERIFY_EMAIL_REQUEST });
     try {
-      await verifyEmailService(verificationData);
+      const {data} = await api.post(`${API_BASE_URL}/users/verify-email`, {token, email});
       dispatch({ type: VERIFY_EMAIL_SUCCESS });
+      return { payload: data };
     } catch (error) {
       dispatch({
         type: VERIFY_EMAIL_FAILURE,
@@ -118,8 +114,9 @@ import {
   export const createUser = (userData) => async (dispatch) => {
     dispatch({ type: CREATE_USER_REQUEST });
     try {
-      const data = await createUserService(userData);
+      const {data} = await api.post(`${API_BASE_URL}/users/create`, userData);
       dispatch({ type: CREATE_USER_SUCCESS, payload: data });
+      return { payload: data };
     } catch (error) {
       dispatch({
         type: CREATE_USER_FAILURE,
@@ -132,7 +129,7 @@ import {
   export const updateUser = (id, userData) => async (dispatch) => {
     dispatch({ type: UPDATE_USER_REQUEST });
     try {
-      const data = await updateUserService(id, userData);
+      const {data} = await api.put(`${API_BASE_URL}/users/update/${id}`, userData);
       dispatch({ type: UPDATE_USER_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -146,7 +143,7 @@ import {
   export const deleteUser = (id) => async (dispatch) => {
     dispatch({ type: DELETE_USER_REQUEST });
     try {
-      await deleteUserService(id);
+      await api.delete(`${API_BASE_URL}/users/delete/${id}`);
       dispatch({ type: DELETE_USER_SUCCESS, payload: id });
     } catch (error) {
       dispatch({
@@ -160,7 +157,7 @@ import {
   export const getUser = (id) => async (dispatch) => {
     dispatch({ type: GET_USER_REQUEST });
     try {
-      const data = await getUserService(id);
+      const {data} = await api.get(`${API_BASE_URL}/users/${id}`);
       dispatch({ type: GET_USER_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -174,7 +171,7 @@ import {
   export const getUsers = (params) => async (dispatch) => {
     dispatch({ type: GET_USERS_REQUEST });
     try {
-      const data = await getUsersService(params);
+      const {data} = await api.get(`${API_BASE_URL}/users/`, {params});
       dispatch({ type: GET_USERS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -188,7 +185,7 @@ import {
   export const addVoucher = (voucherData) => async (dispatch) => {
     dispatch({ type: ADD_VOUCHER_REQUEST });
     try {
-      const data = await addVoucherService(voucherData);
+      const {data} = await api.post(`${API_BASE_URL}/users//vouchers/save`, voucherData);
       dispatch({ type: ADD_VOUCHER_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -202,7 +199,7 @@ import {
   export const removeVoucher = (voucherData) => async (dispatch) => {
     dispatch({ type: REMOVE_VOUCHER_REQUEST });
     try {
-      const data = await removeVoucherService(voucherData);
+      const {data} = await api.delete(`${API_BASE_URL}/users/vouchers/remove`, {voucherData});
       dispatch({ type: REMOVE_VOUCHER_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -216,7 +213,7 @@ import {
   export const addFavoriteProduct = (favoriteData) => async (dispatch) => {
     dispatch({ type: ADD_FAVORITE_PRODUCT_REQUEST });
     try {
-      const data = await addFavoriteProductService(favoriteData);
+      const {data} = await api.post(`${API_BASE_URL}/users//favorites/add`, favoriteData);
       dispatch({ type: ADD_FAVORITE_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -230,7 +227,7 @@ import {
   export const removeFavoriteProduct = (favoriteData) => async (dispatch) => {
     dispatch({ type: REMOVE_FAVORITE_PRODUCT_REQUEST });
     try {
-      const data = await removeFavoriteProductService(favoriteData);
+      const {data} = await api.delete(`${API_BASE_URL}/users//favorites/remove`, favoriteData);
       dispatch({ type: REMOVE_FAVORITE_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

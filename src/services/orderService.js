@@ -1,28 +1,29 @@
 // orderService.js
-import apiClient from './apiClient.js';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
 
-const BASE_URL = '/api/orders';
+const BASE_URL = `${API_BASE_URL}/api/orders`;
 
 /**
  * Create a new order
  * @param {Object} orderData - Data for the new order
  */
 export const createOrderService = async (orderData) => {
-  return await apiClient.post(`${BASE_URL}`, orderData, true);
+  return await api.post(`${BASE_URL}`, orderData);
 };
 
 /**
  * Get all orders (Admin)
  */
 export const getAllOrdersService = async () => {
-  return await apiClient.get(`${BASE_URL}`, {}, true);
+  return await api.get(`${BASE_URL}`);
 };
 
 /**
  * Get orders by user
  */
 export const getUserOrdersService = async () => {
-  return await apiClient.get(`${BASE_URL}/user`, {}, true);
+  return await api.get(`${BASE_URL}/user`);
 };
 
 /**
@@ -30,7 +31,7 @@ export const getUserOrdersService = async () => {
  * @param {string} id - Order ID
  */
 export const getOrderByIdService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, true);
+  return await api.get(`${BASE_URL}/${id}`);
 };
 
 /**
@@ -39,7 +40,7 @@ export const getOrderByIdService = async (id) => {
  * @param {Object} statusData - Status update data
  */
 export const updateOrderStatusService = async (id, statusData) => {
-  return await apiClient.patch(`${BASE_URL}/${id}/status`, statusData, true);
+  return await api.patch(`${BASE_URL}/${id}/status`, statusData);
 };
 
 /**
@@ -47,5 +48,5 @@ export const updateOrderStatusService = async (id, statusData) => {
  * @param {string} id - Order ID
  */
 export const deleteOrderService = async (id) => {
-  return await apiClient.del(`${BASE_URL}/${id}`, true);
+  return await api.delete(`${BASE_URL}/${id}`);
 };

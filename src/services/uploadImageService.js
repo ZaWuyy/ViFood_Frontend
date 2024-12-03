@@ -1,7 +1,7 @@
 // uploadImageService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/uploads';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/uploads`;
 
 /**
  * Upload một ảnh đơn
@@ -10,7 +10,7 @@ const BASE_URL = '/api/uploads';
 export const uploadImageService = async (imageFile) => {
   const formData = new FormData();
   formData.append('image', imageFile);
-  return await apiClient.post(`${BASE_URL}/upload`, formData, true);
+  return await axios.post(`${BASE_URL}/upload`, formData);
 };
 
 /**
@@ -22,7 +22,7 @@ export const uploadMultipleImagesService = async (imageFiles) => {
   imageFiles.forEach((file) => {
     formData.append('images', file);
   });
-  return await apiClient.post(`${BASE_URL}/upload-multiple`, formData, true);
+  return await axios.post(`${BASE_URL}/upload-multiple`, formData);
 };
 
 /**
@@ -30,7 +30,7 @@ export const uploadMultipleImagesService = async (imageFiles) => {
  * @param {string} publicId - Public ID của ảnh
  */
 export const getImageUrlService = async (publicId) => {
-  return await apiClient.get(`${BASE_URL}/image/${publicId}`, {}, true);
+  return await axios.get(`${BASE_URL}/image/${publicId}`);
 };
 
 /**
@@ -38,7 +38,7 @@ export const getImageUrlService = async (publicId) => {
  * @param {string} publicId - Public ID của ảnh
  */
 export const deleteImageService = async (publicId) => {
-  return await apiClient.del(`${BASE_URL}/image/${publicId}`, true);
+  return await axios.delete(`${BASE_URL}/image/${publicId}`);
 };
 
 /**
@@ -48,5 +48,5 @@ export const deleteImageService = async (publicId) => {
 export const updateImageService = async (imageFile) => {
   const formData = new FormData();
   formData.append('image', imageFile);
-  return await apiClient.put(`${BASE_URL}/image`, formData, true);
+  return await axios.put(`${BASE_URL}/image`, formData);
 };

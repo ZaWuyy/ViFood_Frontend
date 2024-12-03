@@ -1,0 +1,22 @@
+.comment-management-page {
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ant-table {
+  border-radius: 8px;
+}
+
+.ant-modal {
+  border-radius: 8px;
+}

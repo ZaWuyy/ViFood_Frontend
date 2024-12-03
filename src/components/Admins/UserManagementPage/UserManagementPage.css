@@ -1,0 +1,96 @@
+/* UserManagementPage.css */
+
+/* Container for the page */
+.user-management-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Title styling */
+.user-management-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table styling */
+.user-management-page .ant-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.user-management-page .ant-table-thead > tr > th {
+  background-color: #f4f4f4;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Table cell padding */
+.user-management-page .ant-table-tbody > tr > td {
+  padding: 12px;
+}
+
+/* Modal styling */
+.user-management-page .ant-modal {
+  border-radius: 8px;
+}
+
+/* Modal form title */
+.user-management-page .ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Popconfirm button styling */
+.user-management-page .ant-popconfirm-buttons .ant-btn-primary {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.user-management-page .ant-popconfirm-buttons .ant-btn-primary:hover {
+  background-color: #ff6b6f;
+  border-color: #ff6b6f;
+}
+
+/* Success and error notification styles */
+.ant-notification-notice-success {
+  background-color: #e6fffb;
+  border-color: #b5f5ec;
+}
+
+.ant-notification-notice-error {
+  background-color: #fff2f0;
+  border-color: #ffccc7;
+}
+
+/* Button spacing */
+.user-management-page .ant-space-item {
+  margin-left: 8px;
+}
+
+/* Select input style */
+.user-management-page .ant-select-selector {
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+/* Update button styling */
+.user-management-page .ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.user-management-page .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* Button to close modal */
+.user-management-page .ant-btn {
+  border-radius: 4px;
+}

@@ -1,0 +1,78 @@
+/* RatingManagementPage.css */
+
+/* Container for the page */
+.rating-management-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Title styling */
+.rating-management-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.rating-management-page .ant-btn {
+  margin-bottom: 16px;
+}
+
+/* Table styles */
+.rating-management-page .ant-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.rating-management-page .ant-table-thead > tr > th {
+  background-color: #f4f4f4;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Table cell padding */
+.rating-management-page .ant-table-tbody > tr > td {
+  padding: 12px;
+}
+
+/* Modal styling */
+.rating-management-page .ant-modal {
+  border-radius: 8px;
+}
+
+/* Modal form title */
+.rating-management-page .ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Popconfirm button styling */
+.rating-management-page .ant-popconfirm-buttons .ant-btn-primary {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.rating-management-page .ant-popconfirm-buttons .ant-btn-primary:hover {
+  background-color: #ff6b6f;
+  border-color: #ff6b6f;
+}
+
+/* Success and error notification */
+.ant-notification-notice-success {
+  background-color: #e6fffb;
+  border-color: #b5f5ec;
+}
+
+.ant-notification-notice-error {
+  background-color: #fff2f0;
+  border-color: #ffccc7;
+}
+
+/* Adjust spacing for popconfirm and button */
+.rating-management-page .ant-space-item {
+  margin-left: 8px;
+}

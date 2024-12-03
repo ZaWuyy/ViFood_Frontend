@@ -1,12 +1,11 @@
 // categoryService.js
-import apiClient from './apiClient.js';
-
-
-const BASE_URL = '/api/categories';
+import axios from 'axios';
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/categories`;
 
 // Lấy danh sách categories
 export const fetchCategoriesService = async () => {
-  return await apiClient.get(`${BASE_URL}/list`, {}, false);
+  return await axios.get(`${BASE_URL}`);
 };
 
 // Tạo mới category với upload ảnh
@@ -14,7 +13,7 @@ export const addCategoryService = async (categoryData, imageFile) => {
   const formData = new FormData();
   formData.append('category', JSON.stringify(categoryData));
   formData.append('image', imageFile);
-  return await apiClient.post(BASE_URL, formData, true);
+  return await api.post(BASE_URL, formData);
 };
 
 // Cập nhật category với upload ảnh
@@ -24,10 +23,10 @@ export const updateCategoryService = async (id, categoryData, imageFile) => {
   if (imageFile) {
     formData.append('image', imageFile);
   }
-  return await apiClient.put(`${BASE_URL}/${id}`, formData, true);
+  return await api.put(`${BASE_URL}/${id}`, formData);
 };
 
 // Xóa category
 export const deleteCategoryService = async (id) => {
-  return await del(`${BASE_URL}/${id}`, true);
+  return await api.delete(`${BASE_URL}/${id}`);
 };

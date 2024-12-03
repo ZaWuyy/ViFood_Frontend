@@ -1,0 +1,17 @@
+/* Blog Item Card Styling */
+.blog-item-card {
+  width: 300px; /* Sets the width of each blog item card */
+  margin: 16px; /* Adds space around each blog item card */
+}
+
+/* Blog Image Styling */
+.blog-item-card .blog-image {
+  height: 200px; /* Sets the height of the blog image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Blog Actions Section Styling */
+.blog-item-card .blog-actions {
+  margin-top: 16px; /* Adds space above the actions section */
+  text-align: right; /* Aligns the action buttons to the right */
+}

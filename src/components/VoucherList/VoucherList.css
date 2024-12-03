@@ -1,0 +1,19 @@
+/* Voucher List Styling */
+.voucher-list {
+  padding: 24px; /* Padding inside the voucher list container */
+}
+
+/* Spinner Container for Loading State */
+.spinner-container {
+  display: flex; /* Using flexbox for centering */
+  justify-content: center; /* Horizontal center alignment */
+  align-items: center; /* Vertical center alignment */
+  height: 300px; /* Set height for the container */
+}
+
+/* Error Message Styling */
+.error-message {
+  text-align: center; /* Center the error message */
+  color: red; /* Red color for error messages */
+  margin-top: 20px; /* Space above the error message */
+}

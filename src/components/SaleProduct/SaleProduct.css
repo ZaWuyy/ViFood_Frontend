@@ -1,0 +1,25 @@
+/* Product Sale Page Styling */
+.product-sale {
+  padding: 24px; /* Add padding around the page */
+}
+
+/* Heading Styling */
+.product-sale h2 {
+  text-align: center; /* Center the heading text */
+  margin-bottom: 24px; /* Margin below the heading */
+}
+
+/* Spinner Container Styling */
+.product-sale .spinner-container {
+  display: flex; /* Use flexbox for the container */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 300px; /* Set the height of the container */
+}
+
+/* Error Message Styling */
+.product-sale .error-message {
+  text-align: center; /* Center the error message text */
+  color: red; /* Set the text color to red */
+  margin-top: 20px; /* Add margin on top */
+}

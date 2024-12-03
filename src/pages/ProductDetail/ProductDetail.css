@@ -1,13 +1,15 @@
+/* Product Detail Styling */
 .product-detail {
   padding: 20px;
   max-width: 100%;
   margin: auto;
   text-align: center;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* Styling for the return button */
 .return-button {
   margin-bottom: 30px;
   margin-right: 90%;
@@ -15,69 +17,78 @@
   cursor: pointer;
   border: none;
   background: none;
-  color: #007bff;
+  color: #007bff; /* Blue text color */
 }
 
 .return-button:hover {
-  text-decoration:none;
+  text-decoration: none; /* Remove underline on hover */
 }
 
+/* Styling for the product image */
 .product-detail img {
-  margin-right: 80%;
+  margin-right: 80%; /* Adjust the image's position */
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for the image */
+  margin-bottom: 20px; /* Bottom margin */
 }
 
+/* Styling for the product title */
 .product-detail h1 {
   font-size: 24px;
   margin: 10px 0;
 }
 
+/* Styling for product description */
 .product-detail p {
   margin: 10px 0;
   font-size: 18px;
 }
 
+/* Styling for the purchase button */
 .product-detail button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #28a745;
-  color: white;
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
   border: none;
-  border-radius: 5px;
+  border-radius: 5px; /* Rounded corners */
   cursor: pointer;
 }
 
 .product-detail button:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker green on hover */
 }
 
+/* Related products section */
 .related-products {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Wrap items in multiple rows if needed */
   margin-top: 30px;
 }
 
+/* Styling for each related food item */
 .related-products .food-item {
   margin: 10px;
-  flex: 1 0 21%;
-  max-width: 200px;
+  flex: 1 0 21%; /* Each item takes up 21% of the width */
+  max-width: 200px; /* Max width for each item */
   text-align: center;
 }
 
+/* Styling for images in related products */
 .related-products img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+  width: 100%; /* Make the image take full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
 }
 
+/* Styling for the title and description of related products */
 .related-products h3, .related-products p {
   margin: 0;
 }
 
+/* Styling for the related products section title */
 .related-products h2 {
   margin-top: 40px;
   font-size: 22px;

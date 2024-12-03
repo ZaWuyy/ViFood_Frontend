@@ -1,0 +1,43 @@
+.product-form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+  
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selector {
+    border-radius: 4px;
+  }
+  
+  .ant-upload-list-picture .ant-upload-list-item {
+    border: none;
+  }
+  
+  .ant-btn {
+    border-radius: 4px;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  .ant-btn {
+    margin-right: 10px;
+  }
+  
+  .ant-textarea {
+    border-radius: 4px;
+  }
+   

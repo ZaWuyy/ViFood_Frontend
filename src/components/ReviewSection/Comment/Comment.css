@@ -1,0 +1,50 @@
+/* Comment Container Styling */
+.comment-container {
+  padding: 2rem; /* Add padding inside the container */
+  background-color: #ffffff; /* White background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+}
+
+/* Styling for each List Item */
+.comment-container .ant-list-item {
+  padding: 1rem 0; /* Padding for top and bottom */
+  border-bottom: 1px solid #f0f0f0; /* Bottom border for separation */
+}
+
+/* Removing border from the last item in the list */
+.comment-container .ant-list-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+/* Comment Header Styling */
+.comment-container .ant-list-item .comment-header {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Vertically center the items */
+  margin-bottom: 0.5rem; /* Margin below the header */
+}
+
+/* Typography Styling */
+.comment-container .ant-list-item .ant-typography {
+  margin-bottom: 0; /* Remove bottom margin from the typography */
+}
+
+/* Comment Image Gallery Styling */
+.comment-container .ant-list-item .comment-images {
+  margin-top: 1rem; /* Add space above the images */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of images */
+}
+
+/* Styling for each image */
+.comment-container .ant-list-item .comment-images .ant-image {
+  border-radius: 4px; /* Rounded corners for images */
+  cursor: pointer; /* Pointer cursor when hovering over images */
+  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+/* Hover effect for images */
+.comment-container .ant-list-item .comment-images .ant-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}

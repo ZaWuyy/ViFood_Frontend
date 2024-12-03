@@ -1,0 +1,22 @@
+/* EmailValidationPage.scss */
+.email-validation-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .email-validation-title {
+    text-align: center;
+  }
+  
+  .verify-otp-button {
+    width: 100%;
+  }
+  
+  .resend-otp-link {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  

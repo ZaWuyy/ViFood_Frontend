@@ -1,0 +1,22 @@
+/* Search Result Page Styling */
+.search-result-page {
+  padding: 2rem; /* Add padding around the page */
+}
+
+/* Heading Styling */
+.search-result-page h2 {
+  margin: 1rem 0; /* Margin around the heading */
+  text-align: center; /* Center the heading text */
+  color: #333; /* Set the color of the text */
+}
+
+/* Ant Design Row Styling */
+.search-result-page .ant-row {
+  width: 100%; /* Ensure the row takes up the full width */
+}
+
+/* Ant Design Column Styling */
+.search-result-page .ant-col {
+  display: flex; /* Use flexbox for column layout */
+  justify-content: center; /* Center the content inside the column */
+}

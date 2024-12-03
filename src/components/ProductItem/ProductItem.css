@@ -1,0 +1,39 @@
+/* Product Item Card Styling */
+.product-item-card {
+  width: 300px; /* Fixed width for the product card */
+  margin: 16px; /* Margin around each product item */
+}
+
+/* Product Image Styling */
+.product-item-card .product-image {
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Price Section Styling */
+.product-item-card .price-section {
+  margin-top: 8px; /* Space above the price section */
+  display: flex; /* Use flexbox to align the price elements */
+  align-items: center; /* Vertically align the items */
+}
+
+/* Old Price Styling */
+.product-item-card .price-section .old-price {
+  text-decoration: line-through; /* Strike-through effect for the old price */
+  color: #888; /* Gray color for the old price */
+  margin-right: 8px; /* Space to the right of the old price */
+}
+
+/* New Price Styling */
+.product-item-card .price-section .new-price {
+  font-size: 1.2em; /* Larger font size for the new price */
+  font-weight: bold; /* Bold font for emphasis */
+  color: #1890ff; /* Blue color for the new price */
+}
+
+/* Action Buttons Styling */
+.product-item-card .action-buttons {
+  margin-top: 16px; /* Space above the action buttons */
+  display: flex; /* Use flexbox to align the buttons */
+  justify-content: space-between; /* Space out the buttons */
+}

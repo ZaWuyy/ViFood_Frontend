@@ -1,0 +1,25 @@
+/* New Product Page Styling */
+.new-product {
+  padding: 24px; /* Adds padding around the new product page content */
+}
+
+/* Title Styling */
+.new-product h2 {
+  text-align: center; /* Centers the title */
+  margin-bottom: 24px; /* Adds space below the title */
+}
+
+/* Spinner Container Styling */
+.new-product .spinner-container {
+  display: flex; /* Uses flexbox for centering */
+  justify-content: center; /* Horizontally centers the spinner */
+  align-items: center; /* Vertically centers the spinner */
+  height: 300px; /* Fixed height for the spinner container */
+}
+
+/* Error Message Styling */
+.new-product .error-message {
+  text-align: center; /* Centers the error message */
+  color: red; /* Red color for the error message */
+  margin-top: 20px; /* Adds space above the error message */
+}

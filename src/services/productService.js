@@ -1,13 +1,13 @@
 // productService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/products';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/products`;
 
 /**
  * Get all products
  */
 export const getProductsService = async () => {
-  return await apiClient.get(`${BASE_URL}`, {}, false);
+  return await axios.get(`${BASE_URL}`);
 };
 
 /**
@@ -15,7 +15,7 @@ export const getProductsService = async () => {
  * @param {string} id - Product ID
  */
 export const getProductByIdService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, false);
+  return await axios.get(`${BASE_URL}/${id}`);
 };
 
 /**
@@ -23,7 +23,7 @@ export const getProductByIdService = async (id) => {
  * @param {Object} productData - Data for the new product
  */
 export const createProductService = async (productData) => {
-  return await apiClient.post(`${BASE_URL}`, productData, true);
+  return await api.post(`${BASE_URL}`, productData);
 };
 
 /**
@@ -32,7 +32,7 @@ export const createProductService = async (productData) => {
  * @param {Object} productData - Updated product data
  */
 export const updateProductService = async (id, productData) => {
-  return await apiClient.put(`${BASE_URL}/${id}`, productData, true);
+  return await api.put(`${BASE_URL}/${id}`, productData);
 };
 
 /**
@@ -40,12 +40,12 @@ export const updateProductService = async (id, productData) => {
  * @param {string} id - Product ID
  */
 export const deleteProductService = async (id) => {
-  return await apiClient.del(`${BASE_URL}/${id}`, true);
+  return await api.delete(`${BASE_URL}/${id}`);
 };
 
 /**
  * Get products by user
  */
 export const getProductsByUserService = async () => {
-  return await apiClient.get(`${BASE_URL}/user`, {}, true);
+  return await api.get(`${BASE_URL}/user`);
 };

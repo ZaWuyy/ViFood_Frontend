@@ -1,13 +1,13 @@
 // userService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/users';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/users`;
 
 /**
  * Fetch user profile
  */
 export const fetchProfileService = async () => {
-  return await apiClient.get(`${BASE_URL}/profile`, {}, true);
+  return await api.get(`${BASE_URL}/profile`);
 };
 
 /**
@@ -21,7 +21,7 @@ export const updateProfileService = async (profileData, avatarFile) => {
   if (avatarFile) {
     formData.append('avatar', avatarFile);
   }
-  return await apiClient.put(`${BASE_URL}/profile`, formData, true);
+  return await api.put(`${BASE_URL}/profile`, formData);
 };
 
 /**
@@ -29,7 +29,7 @@ export const updateProfileService = async (profileData, avatarFile) => {
  * @param {Object} emailData - Data for sending verification email
  */
 export const sendVerificationEmailService = async (emailData) => {
-  return await apiClient.post(`${BASE_URL}/send-verification-email`, emailData, true);
+  return await api.post(`${BASE_URL}/send-verification-email`, emailData);
 };
 
 /**
@@ -37,7 +37,7 @@ export const sendVerificationEmailService = async (emailData) => {
  * @param {Object} verificationData - Data for email verification
  */
 export const verifyEmailService = async (verificationData) => {
-  return await apiClient.post(`${BASE_URL}/verify-email`, verificationData, true);
+  return await api.post(`${BASE_URL}/verify-email`, verificationData);
 };
 
 /**
@@ -45,7 +45,7 @@ export const verifyEmailService = async (verificationData) => {
  * @param {Object} userData - Data for the new user
  */
 export const createUserService = async (userData) => {
-  return await apiClient.post(`${BASE_URL}/create`, userData, true);
+  return await api.post(`${BASE_URL}/create`, userData);
 };
 
 /**
@@ -54,7 +54,7 @@ export const createUserService = async (userData) => {
  * @param {Object} userData - Updated user data
  */
 export const updateUserService = async (id, userData) => {
-  return await apiClient.put(`${BASE_URL}/update/${id}`, userData, true);
+  return await api.put(`${BASE_URL}/update/${id}`, userData);
 };
 
 /**
@@ -62,7 +62,7 @@ export const updateUserService = async (id, userData) => {
  * @param {string} id - User ID
  */
 export const deleteUserService = async (id) => {
-  return await apiClient.del(`${BASE_URL}/delete/${id}`, true);
+  return await api.delete(`${BASE_URL}/delete/${id}`);
 };
 
 /**
@@ -70,7 +70,7 @@ export const deleteUserService = async (id) => {
  * @param {string} id - User ID
  */
 export const getUserService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, true);
+  return await api.get(`${BASE_URL}/${id}`);
 };
 
 /**
@@ -78,7 +78,7 @@ export const getUserService = async (id) => {
  * @param {Object} params - Query parameters for search and filter
  */
 export const getUsersService = async (params) => {
-  return await apiClient.get(`${BASE_URL}`, params, true);
+  return await api.get(`${BASE_URL}`, params);
 };
 
 /**
@@ -86,7 +86,7 @@ export const getUsersService = async (params) => {
  * @param {Object} voucherData - Data for the voucher to add
  */
 export const addVoucherService = async (voucherData) => {
-  return await apiClient.post(`${BASE_URL}/vouchers/save`, voucherData, true);
+  return await api.post(`${BASE_URL}/vouchers/save`, voucherData);
 };
 
 /**
@@ -94,7 +94,7 @@ export const addVoucherService = async (voucherData) => {
  * @param {Object} voucherData - Data for the voucher to remove
  */
 export const removeVoucherService = async (voucherData) => {
-  return await apiClient.post(`${BASE_URL}/vouchers/remove`, voucherData, true);
+  return await api.post(`${BASE_URL}/vouchers/remove`, voucherData);
 };
 
 /**
@@ -102,7 +102,7 @@ export const removeVoucherService = async (voucherData) => {
  * @param {Object} favoriteData - Data for the favorite product to add
  */
 export const addFavoriteProductService = async (favoriteData) => {
-  return await apiClient.post(`${BASE_URL}/favorites/add`, favoriteData, true);
+  return await api.post(`${BASE_URL}/favorites/add`, favoriteData);
 };
 
 /**
@@ -110,5 +110,5 @@ export const addFavoriteProductService = async (favoriteData) => {
  * @param {Object} favoriteData - Data for the favorite product to remove
  */
 export const removeFavoriteProductService = async (favoriteData) => {
-  return await apiClient.post(`${BASE_URL}/favorites/remove`, favoriteData, true);
+  return await api.post(`${BASE_URL}/favorites/remove`, favoriteData);
 };

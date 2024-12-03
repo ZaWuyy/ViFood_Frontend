@@ -1,14 +1,14 @@
 // voucherService.js
-import apiClient from './apiClient.js';
-
-const BASE_URL = '/api/vouchers';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL =  `${API_BASE_URL}/api/vouchers`;
 
 /**
  * Fetch the list of vouchers
  * @param {Object} filters - Filters for fetching vouchers
  */
 export const fetchVouchersService = async (filters = {}) => {
-  return await apiClient.get(`${BASE_URL}`, filters, true);
+  return await api.get(`${BASE_URL}`, filters);
 };
 
 /**
@@ -16,7 +16,7 @@ export const fetchVouchersService = async (filters = {}) => {
  * @param {string} code - Voucher code
  */
 export const fetchVoucherByCodeService = async (code) => {
-  return await  apiClient.get(`${BASE_URL}/${code}`, {}, true);
+  return await  api.get(`${BASE_URL}/${code}`, {});
 };
 
 /**
@@ -24,7 +24,7 @@ export const fetchVoucherByCodeService = async (code) => {
  * @param {Object} voucher - Voucher data
  */
 export const createVoucherService = async (voucher) => {
-  return await apiClient.post(`${BASE_URL}`, voucher, true);
+  return await api.post(`${BASE_URL}`, voucher);
 };
 
 /**
@@ -33,7 +33,7 @@ export const createVoucherService = async (voucher) => {
  * @param {Object} voucher - Updated voucher data
  */
 export const updateVoucherService = async (code, voucher) => {
-  return await apiClient.put(`${BASE_URL}/${code}`, voucher, true);
+  return await api.put(`${BASE_URL}/${code}`, voucher);
 };
 
 /**
@@ -41,7 +41,7 @@ export const updateVoucherService = async (code, voucher) => {
  * @param {string} code - Voucher code
  */
 export const deleteVoucherService = async (code) => {
-  return await apiClient.del(`${BASE_URL}/${code}`, true);
+  return await api.delete(`${BASE_URL}/${code}`);
 };
 
 /**
@@ -49,5 +49,5 @@ export const deleteVoucherService = async (code) => {
  * @param {string} userId - User ID
  */
 export const getVouchersByUserService = async (userId) => {
-  return await apiClient.get(`${BASE_URL}/user`, { userId }, true);
-};
+  return await api.get(`${BASE_URL}/user`, { userId });
+};  

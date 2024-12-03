@@ -1,22 +1,25 @@
 // authService.js
-import apiClient from './apiClient.js';
+import axios from "axios";
 
-const BASE_URL = '/api/auths';
 
 
 // Register a new user
 export const registerService = async (userData) => {
-  return apiClient.post(`${BASE_URL}/register`, userData, false);
+  return axios.post(`${BASE_URL}/register`, userData);
 };
+// resend-otp
+export const resendOtpService = async (email) => {
+  return axios.post(`${BASE_URL}/resend-otp`, { email });
+}
 
 // Verify email OTP
 export const verifyEmailOtpService = async (otpData) => {
-  return apiClient.post(`${BASE_URL}/verify-email-otp`, otpData, false);
+  return axios.post(`${BASE_URL}/verify-email-otp`, otpData);
 };
 
 // Login a user
 export const loginService = async (credentials) => {
-  const data = await apiClient.post(`${BASE_URL}/login`, credentials, false);
+  const data = await axios.post(`${BASE_URL}/login`, credentials);
   const { token } = data;
   localStorage.setItem('jwt', token);
   return data;
@@ -24,10 +27,10 @@ export const loginService = async (credentials) => {
 
 // Forgot password
 export const forgotPasswordService = async (email) => {
-  return apiClient.post(`${BASE_URL}/forgot-password`, { email }, false);
+  return axios.post(`${BASE_URL}/forgot-password`, { email });
 };
 
 // Reset password
 export const resetPasswordService = async (token, newPassword) => {
-  return apiClient.put(`${BASE_URL}/reset-password/${token}`, { password: newPassword }, false);
+  return axios.put(`${BASE_URL}/reset-password/${token}`, { password: newPassword });
 };

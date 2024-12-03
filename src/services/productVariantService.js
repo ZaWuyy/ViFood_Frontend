@@ -1,46 +1,15 @@
 // productService.js
-import apiClient from './apiClient.js';
+import axios from "axios";
+import {api, API_BASE_URL} from "../api/api.js";
+const BASE_URL = `${API_BASE_URL}/api/products`;
 
-const BASE_URL = '/api/products';
-
-/**
- * Get all products
- */
-export const getProductsService = async () => {
-  return await apiClient.get(`${BASE_URL}`, {}, false);
-};
-
-/**
- * Get a product by ID
- * @param {string} id - Product ID
- */
-export const getProductByIdService = async (id) => {
-  return await apiClient.get(`${BASE_URL}/${id}`, {}, false);
-};
-
-/**
- * Create a new product
- * @param {Object} productData - Data for the new product
- */
-export const createProductService = async (productData) => {
-  return await apiClient.post(`${BASE_URL}`, productData, true);
-};
-
-/**
- * Update a product
- * @param {string} id - Product ID
- * @param {Object} productData - Updated product data
- */
-export const updateProductService = async (id, productData) => {
-  return await apiClient.put(`${BASE_URL}/${id}`, productData, true);
-};
 
 /**
  * Get all variants of a product
  * @param {string} productId - Product ID
  */
 export const getProductVariantsService = async (productId) => {
-  return await apiClient.get(`${BASE_URL}/${productId}/variants`, {}, true);
+  return await api.get(`${BASE_URL}/${productId}/variants`, {}, true);
 };
 
 /**

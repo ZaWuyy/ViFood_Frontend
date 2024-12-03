@@ -1,0 +1,19 @@
+/* Blog List Container Styling */
+.blog-list {
+  padding: 24px; /* Adds padding around the blog list container */
+}
+
+/* Spinner Container Styling */
+.blog-list .spinner-container {
+  display: flex; /* Uses flexbox for layout */
+  justify-content: center; /* Centers the spinner horizontally */
+  align-items: center; /* Centers the spinner vertically */
+  height: 300px; /* Sets the height of the container to 300px */
+}
+
+/* Error Message Styling */
+.blog-list .error-message {
+  text-align: center; /* Centers the error message text */
+  color: red; /* Sets the text color to red */
+  margin-top: 20px; /* Adds space above the error message */
+}

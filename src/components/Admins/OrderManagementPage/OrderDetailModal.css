@@ -1,0 +1,17 @@
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  font-weight: bold;
+}
+
+.ant-modal {
+  border-radius: 8px;
+}
+
+.ant-table {
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+h3 {
+  margin-top: 20px;
+  font-weight: bold;
+}
